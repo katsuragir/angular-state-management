@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SserviceService } from './sservice.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-state-management';
+
+  constructor(private service: SserviceService) {
+  }
 }

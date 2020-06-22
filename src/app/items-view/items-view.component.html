@@ -1,0 +1,31 @@
+<button style="width: 10%;" class="btn btn--block card__btn" [routerLink]="'/'">Home</button>
+<br />
+<h4>List of Items</h4>
+
+<br />
+<br />
+
+<div class="main">
+  
+  <!-- Actual search box -->
+  <div class="form-group has-search">
+    <span class="fa fa-search form-control-feedback"></span>
+    <input type="text" class="form-control" placeholder="Search" #searchInput>
+  </div>
+  
+</div>
+
+<div *ngIf="(item|async).length > 0">
+  <ul class="cards" *ngIf="(item|async) as items">
+    <li class="cards__item" *ngFor="let item of items" (click)="detail(item)">
+      <div class="card">
+        <div class="card__image" [ngStyle]="{'background-image': 'url(https://pbs.twimg.com/profile_images/805651234698842112/uPSrYOHT.jpg)'}"></div>
+        <div class="card__content">
+          <div class="card__title">{{item.title.romaji}}</div>
+          <p class="card__text">This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto. </p>
+          <button class="btn btn--block card__btn" (click)="detail(item)">Detail</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

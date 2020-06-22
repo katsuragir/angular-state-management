@@ -1,0 +1,19 @@
+<button class="btn btn--block card__btn" [routerLink]="'/product/list'">Back to the list</button>
+
+<h4 *ngIf="(item|async) as items">{{items.title.romaji}}</h4>
+
+<br />
+<br />
+
+
+  <ul class="cards" *ngIf="(item|async) as items">
+    <li class="cards__item">
+      <div class="card">
+        <div class="card__image" [ngStyle]="{'background-image': 'url(https://pbs.twimg.com/profile_images/805651234698842112/uPSrYOHT.jpg)'}"></div>
+        <div class="card__content">
+          <div class="card__title">{{items.title.romaji}}</div>
+          <p class="card__text">This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto. </p>
+        </div>
+      </div>
+    </li>
+  </ul>
